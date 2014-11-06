@@ -1,4 +1,3 @@
-
 PIXI.WebGLGraphics.buildLine = function(graphicsData, webGLData) {
 	if (graphicsData.lineWidth === 1) {
 		webGLData.drawNativeLine = true;
@@ -17,7 +16,7 @@ PIXI.WebGLGraphics.buildNativeLine = function(graphicsData, webGLData) {
 	if (points.length === 0) return;
 
 	var verts = webGLData.points;
-	var indices = webGLData.indices;
+	//var indices = webGLData.indices;
 	var length = points.length / 2;
 	var indexCount = points.length;
 	var indexStart = verts.length / 6;
@@ -45,13 +44,11 @@ PIXI.WebGLGraphics.buildNativeLine = function(graphicsData, webGLData) {
 		verts.push(r, g, b, alpha);
 	}
 
-	indices.push(indexStart);
 
-	for (i = 0; i < indexCount - 2; i++) {
+	/*for (i = 0; i < indexCount; i++) {
 		indices.push(indexStart++);
-	}
+	}*/
 
-	indices.push(indexStart - 1);
 };
 
 PIXI.WebGLGraphics.buildPolygonLine = function(graphicsData, webGLData) {
@@ -245,7 +242,7 @@ PIXI.WebGLGraphics.buildPolygonLine = function(graphicsData, webGLData) {
 		indices.push(indexStart++);
 	}
 
-	indices.push(indexStart - 1);
+	indices.push(indexStart-1);
 };
 
 PIXI.WebGLGraphics.renderGraphics = function(graphics, renderSession) {
@@ -275,7 +272,7 @@ PIXI.WebGLGraphics.renderGraphics = function(graphics, renderSession) {
 			// set the index buffer!
 			//gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, webGLData.indexBuffer);
 			//gl.drawElements(gl.LINES, webGLData.indices.length, gl.UNSIGNED_SHORT, 0 );
-			gl.drawArrays(gl.LINES, 0, webGLData.indices.length / 2);
+			gl.drawArrays(gl.LINES, 0, webGLData.points.length / 6);
 		} else {
 			renderSession.shaderManager.setShader(shader); //activatePrimitiveShader();
 			shader = renderSession.shaderManager.primitiveShader;
