@@ -1,3 +1,4 @@
+
 PIXI.WebGLGraphics.buildLine = function(graphicsData, webGLData) {
 	if (graphicsData.lineWidth === 1) {
 		webGLData.drawNativeLine = true;
@@ -266,7 +267,7 @@ PIXI.WebGLGraphics.renderGraphics = function(graphics, renderSession) {
 			gl.uniform2f(shader.offsetVector, -offset.x, -offset.y);
 			gl.uniform3fv(shader.tintColor, PIXI.hex2rgb(graphics.tint));
 			gl.uniform1f(shader.alpha, graphics.worldAlpha);
-			//gl.bindBuffer(gl.ARRAY_BUFFER, webGLData.buffer);
+			gl.bindBuffer(gl.ARRAY_BUFFER, webGLData.buffer);
 			gl.vertexAttribPointer(shader.aVertexPosition, 2, gl.FLOAT, false, 4 * 6, 0);
 			gl.vertexAttribPointer(shader.colorAttribute, 4, gl.FLOAT, false, 4 * 6, 2 * 4);
 			// set the index buffer!
