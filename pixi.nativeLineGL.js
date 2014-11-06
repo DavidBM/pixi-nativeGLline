@@ -14,7 +14,6 @@ PIXI.WebGLGraphics.buildNativeLine = function(graphicsData, webGLData) {
 	var i = 0;
 	var points = graphicsData.points;
 
-
 	if (points.length === 0) return;
 
 	var verts = webGLData.points;
@@ -32,7 +31,7 @@ PIXI.WebGLGraphics.buildNativeLine = function(graphicsData, webGLData) {
 
 	var p1x, p1y, p2x, p2y;
 
-	for (i = 1; i < length - 1; i+=2) {
+	for (i = 1; i < length; i ++) {
 		p1x = points[(i - 1) * 2];
 		p1y = points[(i - 1) * 2 + 1];
 
@@ -48,7 +47,7 @@ PIXI.WebGLGraphics.buildNativeLine = function(graphicsData, webGLData) {
 
 	indices.push(indexStart);
 
-	for (i = 0; i < indexCount - 4; i++) {
+	for (i = 0; i < indexCount - 2; i++) {
 		indices.push(indexStart++);
 	}
 
