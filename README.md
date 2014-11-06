@@ -7,20 +7,23 @@ Load this libary after pixi.js and draw lines of 1px of width.
 
 Ex:
 ```
-	var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, {antialias: true, transparent: true});
+var renderer = PIXI.autoDetectRenderer(
+	window.innerWidth, 
+	window.innerHeight, 
+	{antialias: true, transparent: true});
 
-	document.body.appendChild(renderer.view);
-	
-	var stage = new PIXI.Stage;
+document.body.appendChild(renderer.view);
 
-  this.graphics = new PIXI.Graphics();
-  this.graphics.lineStyle(1, 0xFFFFFF );
-  
-  this.graphics.moveTo(0,0);
-  
-  this.graphics.lineTo(1000, 1000);
-  
-  stage.addChild(this.graphics);
+var stage = new PIXI.Stage;
+
+this.graphics = new PIXI.Graphics();
+this.graphics.lineStyle(1, 0xFFFFFF );
+
+this.graphics.moveTo(0,0);
+
+this.graphics.lineTo(1000, 1000);
+
+stage.addChild(this.graphics);
 ```
 
 
