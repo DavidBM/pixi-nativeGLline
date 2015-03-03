@@ -1,3 +1,5 @@
+PIXI.WebGLGraphics.buildPolygonLine = PIXI.WebGLGraphics.buildLine;
+
 PIXI.WebGLGraphics.buildLine = function(graphicsData, webGLData) {
 	if (graphicsData.lineWidth === 1) {
 		webGLData.drawNativeLine = true;
@@ -7,8 +9,6 @@ PIXI.WebGLGraphics.buildLine = function(graphicsData, webGLData) {
 		PIXI.WebGLGraphics.buildPolygonLine(graphicsData, webGLData);
 	}
 };
-
-PIXI.WebGLGraphics.buildPolygonLine = PIXI.WebGLGraphics.buildLine;
 
 PIXI.WebGLGraphics.buildNativeLine = function(graphicsData, webGLData) {
 
