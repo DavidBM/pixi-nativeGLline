@@ -8,6 +8,8 @@ PIXI.WebGLGraphics.buildLine = function(graphicsData, webGLData) {
 	}
 };
 
+PIXI.WebGLGraphics.buildPolygonLine = PIXI.WebGLGraphics.buildLine;
+
 PIXI.WebGLGraphics.buildNativeLine = function(graphicsData, webGLData) {
 
 	var i = 0;
