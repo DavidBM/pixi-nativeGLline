@@ -3,7 +3,7 @@
 A library that uses native GL_LINES for drawing 1px graphics lines in pixi.js.
 
 ##Usage
-require this libreary and draw lines of 1px of width.
+require this library and draw lines of 1px of width.
 
 Requires Pixi.js 3.0.0. Also requires browserify (pixi.js uses browserify for building);
 
