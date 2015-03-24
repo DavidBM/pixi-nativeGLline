@@ -1,3 +1,5 @@
+if(typeof module !== 'undefined' && module.exports) var PIXI = require('pixi.js');
+
 PIXI.WebGLGraphics.buildPolygonLine = PIXI.WebGLGraphics.buildLine;
 
 PIXI.WebGLGraphics.buildLine = function(graphicsData, webGLData) {
