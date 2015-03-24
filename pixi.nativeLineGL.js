@@ -55,7 +55,7 @@ PIXI.GraphicsRenderer.buildNativeLine = function(graphicsData, webGLData) {
 
 };
 
-PIXI.GraphicsRenderer.render._oldRender = PIXI.GraphicsRenderer.render;
+PIXI.GraphicsRenderer._oldRender = PIXI.GraphicsRenderer.render;
 
 PIXI.GraphicsRenderer.render = function(graphics) {
 	var renderer = this.renderer;
