@@ -1,11 +1,11 @@
 {
   "name": "pixi.js-native-gl_line",
   "version": "0.1.1",
-  "description": "Draw 1px pixi.js lines with GL_LINES instead of polygonize the lines.",
+  "description": "Draw 1px pixi.js lines with GL_LINES instead of polygonize the lines",
   "main": "pixi.nativeLineGL.js",
   "author": "David Bonet <webbonet@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "pixi.js": "^3.0.0",
+    "pixi.js": "^3.0.0"
   }
 }
