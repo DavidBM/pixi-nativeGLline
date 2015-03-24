@@ -1,18 +1,18 @@
 if(typeof module !== 'undefined' && module.exports) var PIXI = require('pixi.js');
 
-PIXI.GraphicsRenderer.buildPolygonLine = PIXI.GraphicsRenderer.buildLine;
+PIXI.GraphicsRenderer.prototype.buildPolygonLine = PIXI.GraphicsRenderer.prototype.buildLine;
 
-PIXI.GraphicsRenderer.buildLine = function(graphicsData, webGLData) {
+PIXI.GraphicsRenderer.prototype.buildLine = function(graphicsData, webGLData) {
 	if (graphicsData.lineWidth === 1) {
 		webGLData.drawNativeLine = true;
-		PIXI.GraphicsRenderer.buildNativeLine(graphicsData, webGLData);
+		this.buildNativeLine(graphicsData, webGLData);
 	} else {
 		webGLData.drawNativeLine = false;
-		PIXI.GraphicsRenderer.buildPolygonLine(graphicsData, webGLData);
+		this.buildPolygonLine(graphicsData, webGLData);
 	}
 };
 
-PIXI.GraphicsRenderer.buildNativeLine = function(graphicsData, webGLData) {
+PIXI.GraphicsRenderer.prototype.buildNativeLine = function(graphicsData, webGLData) {
 
 	var i = 0;
 	var points = graphicsData.points;
@@ -55,9 +55,9 @@ PIXI.GraphicsRenderer.buildNativeLine = function(graphicsData, webGLData) {
 
 };
 
-PIXI.GraphicsRenderer._oldRender = PIXI.GraphicsRenderer.render;
+PIXI.GraphicsRenderer._oldRender = PIXI.GraphicsRenderer.prototype.render;
 
-PIXI.GraphicsRenderer.render = function(graphics) {
+PIXI.GraphicsRenderer.prototype.render = function(graphics) {
 	var renderer = this.renderer;
 	var gl = renderer.gl;
 	var shader = renderer.shaderManager.plugins.primitiveShader,
