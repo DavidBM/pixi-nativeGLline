@@ -1,4 +1,6 @@
-if(typeof module !== 'undefined' && module.exports) var PIXI = require('pixi.js');
+var PIXI = require('pixi.js');
+
+var utils = PIXI.utils;
 
 PIXI.GraphicsRenderer.prototype.buildPolygonLine = PIXI.GraphicsRenderer.prototype.buildLine;
 
@@ -26,7 +28,7 @@ PIXI.GraphicsRenderer.prototype.buildNativeLine = function(graphicsData, webGLDa
 	var indexStart = verts.length / 6;
 
 	// sort color
-	var color = PIXI.hex2rgb(graphicsData.lineColor);
+	var color = utils.hex2rgb(graphicsData.lineColor);
 	var alpha = graphicsData.lineAlpha;
 	var r = color[0] * alpha;
 	var g = color[1] * alpha;
