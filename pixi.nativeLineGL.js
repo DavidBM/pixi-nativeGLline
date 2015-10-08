@@ -64,9 +64,10 @@ PIXI.GraphicsRenderer.prototype.render = function(graphics) {
 	var gl = renderer.gl;
 	var shader = renderer.shaderManager.plugins.primitiveShader,
 		webGLData;
-	if (graphics.dirty) {
+
+	if (graphics.dirty || !graphics._webGL[gl.id])
 		this.updateGraphics(graphics, gl);
-	}
+
 	var webGL = graphics._webGL[gl.id];
 	// This could be speeded up for sure!
 	renderer.blendModeManager.setBlendMode(graphics.blendMode);
