@@ -5,22 +5,36 @@ A library that uses native GL_LINES for drawing 1px graphics lines in pixi.js.
 ##Usage
 require this library and draw lines of 1px of width.
 
-Requires Pixi.js 3.0.0. Also requires browserify (pixi.js uses browserify for building);
+Requires Pixi.js 4;
 
-`npm install pixi.js@^3.0.0 DavidBM/pixi-nativeGLline.git --save`
+It uses the node style for requiring internally PIXI, then better use with browserify or similar. Anyway, you can allways put in the middle of the babel compilation step.
+
+`npm install DavidBM/pixi-nativeGLline.git --save`
+
+Fur using the patch, just require / import the file after importing pixi.js.
+
+You can see a working example executing this two commands:
+
+`npm install`
+and
+`npm run compile`
+
+And now open in the browser the file `example/example.html`
 
 Ex:
-```
+
+``` javascript
+
 require('pixi.js-native-gl_line');
 
 var renderer = PIXI.autoDetectRenderer(
 	window.innerWidth,
 	window.innerHeight,
-	{antialias: true, transparent: true});
+	{antialias: true, transparent: false});
 
 document.body.appendChild(renderer.view);
 
-var stage = new PIXI.Stage;
+var stage = new PIXI.Container();
 
 this.graphics = new PIXI.Graphics();
 this.graphics.lineStyle(1, 0xFFFFFF );
@@ -30,6 +44,9 @@ this.graphics.moveTo(0,0);
 this.graphics.lineTo(1000, 1000);
 
 stage.addChild(this.graphics);
+
+renderer.render(stage);
+
 ```
 
 
