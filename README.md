@@ -2,6 +2,8 @@
 
 # This library is not working right now. The new ES6 way of PixiV4 makes harder to make an external patch. If someone what to help in that point to reapply the patch, a pull request or hint is welcome! 
 
+# If you want this feature in offical PIXI library, support this pull request! https://github.com/pixijs/pixi.js/pull/3328
+
 A library that uses native GL_LINES for drawing 1px graphics lines in pixi.js.
 
 ##Usage
